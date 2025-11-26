@@ -44,6 +44,7 @@ public class TelaConfirmacao extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		TelaCadastro telaCadastro = new TelaCadastro();
 		
 		JLabel lblNewLabel = new JLabel("Deseja realmente cadastrar este produto?");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -64,11 +65,12 @@ public class TelaConfirmacao extends JFrame {
 				if (rbS.isSelected()) {
 					ResumoTela rt = new ResumoTela();
                     rt.setVisible(true);
+                    telaCadastro.setVisible(false);
                     dispose();
+                    
                 }
 				else if (rbN.isSelected()) {
-                    TelaCadastro tc = new TelaCadastro();
-                    tc.setVisible(true);
+                    dispose();
                 }
 			}
 		});

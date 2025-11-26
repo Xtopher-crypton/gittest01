@@ -52,8 +52,6 @@ public class ResumoTela extends JFrame {
         textArea.setWrapStyleWord(true);
         
         
-        
-        //textArea.setText(txt);
 
         JScrollPane scrollPane = new JScrollPane(textArea);
         scrollPane.setBounds(20, 20, 340, 180);

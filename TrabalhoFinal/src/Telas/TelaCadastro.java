@@ -50,8 +50,7 @@ public class TelaCadastro extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
-		
+		contentPane.setLayout(null);	
 		JTextField txtfCod = new JTextField();
 		txtfCod.setBounds(95, 22, 110, 20);
 		contentPane.add(txtfCod);
@@ -122,7 +121,10 @@ public class TelaCadastro extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				TelaConfirmacao telaCon = new TelaConfirmacao();
 				telaCon.setVisible(true);
+				
+				
 			}
+			
 		});
 		btnNewButton.setBounds(141, 227, 110, 23);
 		contentPane.add(btnNewButton);
@@ -140,16 +142,6 @@ public class TelaCadastro extends JFrame {
 		lblNewLabel_6.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblNewLabel_6.setBounds(111, 180, 143, 18);
 		contentPane.add(lblNewLabel_6);
-		
-		
-		String txt = "=== Dados do Produto Cadastrado ===\n"
-                + "Código: " + txtfCod.getText() + "\n"
-                + "Descrição: " + txtfDesc.getText() + "\n"
-                + "Preço: " + txtfPreco.getText() + "\n"
-                + "Quantidade: " + txtfQuant.getText() + "\n"
-                + "Valor Total: " + txtfValorTotal.getText() + "\n"
-                + "Meio de Pagamento: " + comboPagamento.getSelectedItem() + "\n"
-                + "Produto em Estoque: " + (rbSim.isSelected() ? "Sim" : "Não");
 
 	}
 }
