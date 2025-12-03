@@ -8,6 +8,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JRadioButton;
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -44,7 +45,6 @@ public class TelaConfirmacao extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		TelaCadastro telaCadastro = new TelaCadastro();
 		
 		JLabel lblNewLabel = new JLabel("Deseja realmente cadastrar este produto?");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -59,15 +59,17 @@ public class TelaConfirmacao extends JFrame {
 		rbN.setBounds(252, 114, 59, 23);
 		contentPane.add(rbN);
 		
+		ButtonGroup btngrup = new ButtonGroup();
+		btngrup.add(rbS);
+		btngrup.add(rbN);
+		
 		JButton btnConfirmar = new JButton("Confirmar");
 		btnConfirmar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (rbS.isSelected()) {
-					ResumoTela rt = new ResumoTela();
-                    rt.setVisible(true);
-                    telaCadastro.setVisible(false);
-                    dispose();
-                    
+					TelaProdutos tp = new TelaProdutos();
+					tp.setVisible(true);
+					dispose();
                 }
 				else if (rbN.isSelected()) {
                     dispose();
