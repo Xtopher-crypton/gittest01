@@ -96,17 +96,17 @@ public class TelaCadastro extends JFrame {
 		contentPane.add(txtfQuant);
 		txtfQuant.setColumns(10);
 		
-		JComboBox comboPagamento = new JComboBox();
-		comboPagamento.setBounds(359, 165, 119, 22);
-		comboPagamento.addItem("Alimentos");
-		comboPagamento.addItem("Limpeza");
-		comboPagamento.addItem("Eletrônicos");
-		comboPagamento.addItem("Bebidas");
-		comboPagamento.addItem("Higiene");
-		comboPagamento.addItem("Vestimenta");
-		comboPagamento.addItem("Informática");
-		comboPagamento.addItem("Outros");
-		contentPane.add(comboPagamento);
+		JComboBox comboCategoria = new JComboBox();
+		comboCategoria.setBounds(359, 165, 119, 22);
+		comboCategoria.addItem("Alimentos");
+		comboCategoria.addItem("Limpeza");
+		comboCategoria.addItem("Eletrônicos");
+		comboCategoria.addItem("Bebidas");
+		comboCategoria.addItem("Higiene");
+		comboCategoria.addItem("Vestimenta");
+		comboCategoria.addItem("Informática");
+		comboCategoria.addItem("Outros");
+		contentPane.add(comboCategoria);
 		
 		JRadioButton rbSim = new JRadioButton("Sim");
 		rbSim.setBounds(139, 165, 52, 23);
@@ -131,6 +131,9 @@ public class TelaCadastro extends JFrame {
 				            JOptionPane.showMessageDialog(null, "Selecione se o produto está em estoque!", "Erro", JOptionPane.ERROR_MESSAGE);
 				            return;
 				        }
+				        String estoque = rbSim.isSelected() ? "Sim" : "Não";
+				        String categoria = comboCategoria.getSelectedItem().toString();
+				        
 				        String[] dados = {
 				        	    txtfCod.getText(),
 				        	    txtfDesc.getText(),

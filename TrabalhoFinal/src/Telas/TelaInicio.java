@@ -56,12 +56,18 @@ public class TelaInicio extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Visualizar Tabela de Produtos");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaProdutos telaProdutos = new TelaProdutos();
+				telaProdutos.setVisible(true);
+			}
+		});
 		btnNewButton_1.setBounds(119, 181, 203, 23);
 		contentPane.add(btnNewButton_1);
 		
 		JLabel lblNewLabel = new JLabel("O Que Deseja Fazer Agora?");
 		lblNewLabel.setFont(new Font("Malgun Gothic Semilight", Font.BOLD | Font.ITALIC, 19));
-		lblNewLabel.setBounds(119, 37, 203, 33);
+		lblNewLabel.setBounds(104, 34, 307, 33);
 		contentPane.add(lblNewLabel);
 
 	}

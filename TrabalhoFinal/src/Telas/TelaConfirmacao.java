@@ -67,8 +67,8 @@ public class TelaConfirmacao extends JFrame {
 		btnConfirmar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (rbS.isSelected()) {
-					TelaProdutos tp = new TelaProdutos();
-					tp.setVisible(true);
+					TelaInicio ti = new TelaInicio();
+					ti.setVisible(true);
 					dispose();
                 }
 				else if (rbN.isSelected()) {

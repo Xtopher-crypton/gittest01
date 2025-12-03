@@ -19,7 +19,10 @@ public class TelaLogin extends JFrame {
 	private JPanel contentPane;
 	private JTextField txtfUsuario;
 	private JTextField txtfSenha;
-
+	
+	Usuario usuario = new Usuario(getWarningString(), getName());
+	private String user = usuario.getUsuario();
+	private String senha = usuario.getSenha();
 	/**
 	 * Launch the application.
 	 */
@@ -78,6 +81,19 @@ public class TelaLogin extends JFrame {
 					JOptionPane.showMessageDialog(null, "Preencha os campos!!", "Erro", JOptionPane.ERROR_MESSAGE);
 					return;
 				}
+				String usuarioDigitado = txtfUsuario.getText().trim();
+		        String senhaDigitada = txtfSenha.getText().trim();
+				if(usuarioDigitado.equals(user) && senhaDigitada.equals(senha)) {
+		            JOptionPane.showMessageDialog(null, "Bem vindo " + usuarioDigitado);
+		            TelaInicio telaInicio = new TelaInicio();
+		            telaInicio.setVisible(true);
+		            dispose();
+		        } else {
+		            JOptionPane.showMessageDialog(null,
+		                "Usuário ou senha incorretos!",
+		                "Erro",
+		                JOptionPane.ERROR_MESSAGE);
+				
 				JOptionPane.showMessageDialog(null, "Bem vindo " + txtfUsuario.getText().trim());
 				TelaInicio telaInicio = new TelaInicio();
 				telaInicio.setVisible(true);

@@ -52,10 +52,24 @@ public class TelaProdutos extends JFrame {
         	new Object[][] {
         	},
         	new String[] {
-        		"Categoria", "Em Estoque", "Quantidade", "Pre\u00E7o", "Descri\u00E7\u00E3o", "C\u00F3digo"
+        		"Codigo", "Descricao", "Preco", "Quantidade", "Em Estoque", "Categoria"
         	}
         ));
-        scrollPane.setViewportView(table);
+        scrollPane.setColumnHeaderView(table);
         
+        carregarTabela();
 	}
+	private void carregarTabela() {
+
+        String[] colunas = {
+                "Código", "Descrição", "Preço", "Quantidade", "Em Estoque", "Categoria"
+        };
+
+        DefaultTableModel model = new DefaultTableModel(colunas, 0);
+
+        for (String[] produto : TelaCadastro.listaProdutos) {
+            model.addRow(produto);
+        }
+        table.setModel(model);
+    }
 }
