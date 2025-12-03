@@ -7,11 +7,13 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 public class TelaProdutos extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -45,9 +47,15 @@ public class TelaProdutos extends JFrame {
         scrollPane.setBounds(10, 10, 665, 290);
         contentPane.add(scrollPane);
         
-        tabela = new JTable();
-        scrollPane.setViewportView(tabela);
-
-        carregarTabela();
+        table = new JTable();
+        table.setModel(new DefaultTableModel(
+        	new Object[][] {
+        	},
+        	new String[] {
+        		"Categoria", "Em Estoque", "Quantidade", "Pre\u00E7o", "Descri\u00E7\u00E3o", "C\u00F3digo"
+        	}
+        ));
+        scrollPane.setViewportView(table);
+        
 	}
 }
