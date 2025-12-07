@@ -56,7 +56,6 @@ public class TelaProdutos extends JFrame {
         	}
         ));
         scrollPane.setViewportView(table);
-        
         carregarTabela();
 	}
 	private void carregarTabela() {

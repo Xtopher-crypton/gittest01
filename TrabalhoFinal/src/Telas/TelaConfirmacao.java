@@ -79,8 +79,8 @@ public class TelaConfirmacao extends JFrame {
 			                TelaCadastro.desc,
 			                TelaCadastro.preco,
 			                TelaCadastro.quant,
-			                TelaCadastro.categoria,
-			                TelaCadastro.estoque
+			                TelaCadastro.estoque,
+			                TelaCadastro.categoria
 			            };
 					TelaCadastro.listaProdutos.add(dados);
 					dispose();
