@@ -17,7 +17,12 @@ public class TelaConfirmacao extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-
+	String cod = TelaCadastro.cod;
+	String desc = TelaCadastro.desc;
+	String preco = TelaCadastro.preco;
+	String quant = TelaCadastro.quant;
+	String categoria = TelaCadastro.categoria;
+	String estoque = TelaCadastro.estoque;
 	/**
 	 * Launch the application.
 	 */
@@ -69,6 +74,15 @@ public class TelaConfirmacao extends JFrame {
 				if (rbS.isSelected()) {
 					TelaInicio ti = new TelaInicio();
 					ti.setVisible(true);
+					String[] dados = {
+			                TelaCadastro.cod,
+			                TelaCadastro.desc,
+			                TelaCadastro.preco,
+			                TelaCadastro.quant,
+			                TelaCadastro.categoria,
+			                TelaCadastro.estoque
+			            };
+					TelaCadastro.listaProdutos.add(dados);
 					dispose();
                 }
 				else if (rbN.isSelected()) {

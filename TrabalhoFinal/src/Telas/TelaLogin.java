@@ -43,6 +43,7 @@ public class TelaLogin extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaLogin() {
+		getContentPane().setLayout(null);
 		setTitle("Tela Login");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -76,28 +77,25 @@ public class TelaLogin extends JFrame {
 		
 		JButton btnConfirmar = new JButton("Confirmar");
 		btnConfirmar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {	
+			public void actionPerformed(ActionEvent e) {
 				if(txtfUsuario.getText().trim().isEmpty() || txtfSenha.getText().trim().isEmpty()) {
-					JOptionPane.showMessageDialog(null, "Preencha os campos!!", "Erro", JOptionPane.ERROR_MESSAGE);
-					return;
+				    JOptionPane.showMessageDialog(null, "Preencha os campos!!", "Erro", JOptionPane.ERROR_MESSAGE);
+				    return;
 				}
+
 				String usuarioDigitado = txtfUsuario.getText().trim();
-		        String senhaDigitada = txtfSenha.getText().trim();
+				String senhaDigitada = txtfSenha.getText().trim();
 				if(usuarioDigitado.equals(user) && senhaDigitada.equals(senha)) {
-		            JOptionPane.showMessageDialog(null, "Bem vindo " + usuarioDigitado);
-		            TelaInicio telaInicio = new TelaInicio();
-		            telaInicio.setVisible(true);
-		            dispose();
-		        } else {
-		            JOptionPane.showMessageDialog(null,
-		                "Usuário ou senha incorretos!",
-		                "Erro",
-		                JOptionPane.ERROR_MESSAGE);
-				
-				JOptionPane.showMessageDialog(null, "Bem vindo " + txtfUsuario.getText().trim());
-				TelaInicio telaInicio = new TelaInicio();
-				telaInicio.setVisible(true);
-				dispose();
+				    JOptionPane.showMessageDialog(null, "Bem vindo " + usuarioDigitado);
+				    TelaInicio telaInicio = new TelaInicio();
+				    telaInicio.setVisible(true);
+				    dispose();
+				} else {
+				    JOptionPane.showMessageDialog(null,
+				        "Usuário ou senha incorretos!",
+				        "Erro",
+				        JOptionPane.ERROR_MESSAGE);
+				}
 			}
 		});
 		btnConfirmar.setBounds(179, 213, 103, 23);

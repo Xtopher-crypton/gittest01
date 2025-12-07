@@ -28,6 +28,8 @@ public class TelaCadastro extends JFrame {
 	private JTextField txtfPreco;
 	private JTextField txtfQuant;
 	public static ArrayList<String[]> listaProdutos = new ArrayList<>();
+	
+	public static String cod, desc, preco, quant, categoria, estoque;
 
 	/**
 	 * Launch the application.
@@ -131,17 +133,13 @@ public class TelaCadastro extends JFrame {
 				            JOptionPane.showMessageDialog(null, "Selecione se o produto está em estoque!", "Erro", JOptionPane.ERROR_MESSAGE);
 				            return;
 				        }
-				        String estoque = rbSim.isSelected() ? "Sim" : "Não";
-				        String categoria = comboCategoria.getSelectedItem().toString();
+				        estoque = rbSim.isSelected() ? "Sim" : "Não";
+				        categoria = comboCategoria.getSelectedItem().toString();
+				        cod = txtfCod.getText();
+				        desc = txtfDesc.getText();
+				        preco = txtfPreco.getText();
+				        quant = txtfQuant.getText();
 				        
-				        String[] dados = {
-				        	    txtfCod.getText(),
-				        	    txtfDesc.getText(),
-				        	    txtfPreco.getText(),
-				        	    txtfQuant.getText()
-				        	};
-
-				        	listaProdutos.add(dados);
 				
 				TelaConfirmacao telaCon = new TelaConfirmacao();
 				telaCon.setVisible(true);

@@ -44,7 +44,7 @@ public class TelaProdutos extends JFrame {
         contentPane.setLayout(null);
         
         JScrollPane scrollPane = new JScrollPane();
-        scrollPane.setBounds(10, 10, 665, 290);
+        scrollPane.setBounds(10, 0, 665, 300);
         contentPane.add(scrollPane);
         
         table = new JTable();
@@ -55,7 +55,7 @@ public class TelaProdutos extends JFrame {
         		"Codigo", "Descricao", "Preco", "Quantidade", "Em Estoque", "Categoria"
         	}
         ));
-        scrollPane.setColumnHeaderView(table);
+        scrollPane.setViewportView(table);
         
         carregarTabela();
 	}
