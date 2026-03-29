@@ -8,6 +8,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JRadioButton;
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -16,7 +17,12 @@ public class TelaConfirmacao extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-
+	String cod = TelaCadastro.cod;
+	String desc = TelaCadastro.desc;
+	String preco = TelaCadastro.preco;
+	String quant = TelaCadastro.quant;
+	String categoria = TelaCadastro.categoria;
+	String estoque = TelaCadastro.estoque;
 	/**
 	 * Launch the application.
 	 */
@@ -58,17 +64,29 @@ public class TelaConfirmacao extends JFrame {
 		rbN.setBounds(252, 114, 59, 23);
 		contentPane.add(rbN);
 		
+		ButtonGroup btngrup = new ButtonGroup();
+		btngrup.add(rbS);
+		btngrup.add(rbN);
+		
 		JButton btnConfirmar = new JButton("Confirmar");
 		btnConfirmar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (rbS.isSelected()) {
-					ResumoTela rt = new ResumoTela();
-                    rt.setVisible(true);
-                    dispose();
+					TelaInicio ti = new TelaInicio();
+					ti.setVisible(true);
+					String[] dados = {
+			                TelaCadastro.cod,
+			                TelaCadastro.desc,
+			                TelaCadastro.preco,
+			                TelaCadastro.quant,
+			                TelaCadastro.estoque,
+			                TelaCadastro.categoria
+			            };
+					TelaCadastro.listaProdutos.add(dados);
+					dispose();
                 }
 				else if (rbN.isSelected()) {
-                    TelaCadastro tc = new TelaCadastro();
-                    tc.setVisible(true);
+                    dispose();
                 }
 			}
 		});
